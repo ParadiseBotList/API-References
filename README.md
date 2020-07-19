@@ -27,3 +27,18 @@ fetch("https://paradisebots.net/api/auth/stats/:botid", requestOptions)
   .then(console.log)
   .catch(console.error);
   ```
+
+# Python Reference
+```python
+url = "https://paradisebots.net/api/auth/stats/:botid"
+
+payload = "{\"server_count\": 1500}" # Replace this number with the server count
+headers = {
+  'authorization': 'YOUR_AUTH_TOKEN',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+print(response.text.encode('utf8'))
+```
+
