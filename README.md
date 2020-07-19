@@ -16,10 +16,13 @@ myHeaders.append("Content-Type", "application/json");
 var requestOptions = {
   method: 'POST',
   headers: myHeaders,
-  body: JSON.stringify({"server_count": 1500}); // Replace this number with the server count
-};
+  /* 
+   * Replace "1500" With your server count to update manually or
+   * Add something along the lines of "client.guilds.size" for (Discord.JS v11)
+   */
+  body: JSON.stringify({"server_count": 1500}); 
 
-fetch("/api/auth/stats/:botid", requestOptions) // Make sure you include the domain
+fetch("https://paradisebots.net/api/auth/stats/:botid", requestOptions)
   .then(response => response.text())
   .then(console.log)
   .catch(console.error);
